@@ -5,10 +5,10 @@ inotify:
   volumes:
   - '/var/run/docker.sock:/tmp/docker.sock:ro'
   - '/var/lib/docker/data/bind/config:/config'
-  - '/var/lib/docker/data/bind/data:/data'
+  - 'D:\\WAV:/in'
 
   environment:
   - 'CONTAINER=bind'
-  - 'VOLUMES=/config /data'
+  - 'VOLUMES=/config /in'
 
   restart: always
