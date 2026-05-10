@@ -1,14 +1,14 @@
-inotify:
-  image: 'pstauffer/inotify:latest'
-  container_name: 'inotify'
+services:
+    inotify:
+        image: 'aahutsal/docker-inotify:latest'
 
-  volumes:
-  - '/var/run/docker.sock:/tmp/docker.sock:ro'
-  - '/var/lib/docker/data/bind/config:/config'
-  - 'D:\\WAV:/in'
+        volumes:
+          - '/var/run/docker.sock:/tmp/docker.sock:ro'
+          - '/var/lib/docker/data/bind/config:/config'
+          - 'D:\\WAV:/in'
 
-  environment:
-  - 'CONTAINER=bind'
-  - 'VOLUMES=/config /in'
+        environment:
+            - 'CONTAINER=bind'
+            - 'VOLUMES=/config /in'
 
-  restart: always
+        restart: always
